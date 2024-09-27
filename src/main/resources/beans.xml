@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="com.mohammed.hrimch.hrservlet.Employee">
+        <property name="id" value="12"></property>
+        <property name="salary" value="4500.00"></property>
+        <property name="departement" ref="dep"></property>
+        <property name="roles">
+            <list>
+                <bean class="com.mohammed.hrimch.hrservlet.Role">
+                    <property name="name" value="Admin" />
+                </bean>
+                <bean class="com.mohammed.hrimch.hrservlet.Role">
+                    <property name="name" value="Dev" />
+                </bean>
+                <bean class="com.mohammed.hrimch.hrservlet.Role">
+                    <property name="name" value="User" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dep" class="com.mohammed.hrimch.hrservlet.Departement">
+        <constructor-arg value="1" />
+        <constructor-arg value="Entwicklung" />
+    </bean>
+</beans>
+
+
+
+
+
